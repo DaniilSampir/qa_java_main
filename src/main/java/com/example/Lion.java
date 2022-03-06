@@ -1,7 +1,6 @@
 package com.example;
 
 import java.util.List;
-
 public class Lion {
 
     boolean hasMane;
@@ -12,11 +11,15 @@ public class Lion {
         } else if ("Самка".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
     }
 
-    Feline feline = new Feline();
+    private IFeline feline;
+
+    public Lion (IFeline feline){
+        this.feline = feline;
+    }
 
     public int getKittens() {
         return feline.getKittens();
@@ -27,6 +30,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return feline.getFood();
     }
 }
