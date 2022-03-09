@@ -1,6 +1,7 @@
 package com.example;
 
 import java.util.List;
+
 public class Lion {
 
     boolean hasMane;
@@ -15,9 +16,8 @@ public class Lion {
         }
     }
 
-    private IFeline feline;
-
-    public Lion (IFeline feline){
+    private Feline feline;
+    public Lion (Feline feline){
         this.feline = feline;
     }
 
@@ -30,6 +30,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return feline.getFood();
+        return feline.getFood("Хищник");
     }
 }
